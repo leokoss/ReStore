@@ -1,3 +1,4 @@
+import { Typography } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import Catalog from "../../features/catalog/Catalog";
 import { Product } from "../models/product";
@@ -20,15 +21,15 @@ function App() {
       price: (prevState.length*100)+100,
       description: 'somedescription',
       brand: 'somebrand' + (prevState.length + 1),
-      pictureUrl: 'http://picksum.photos/200'}]
+      pictureUrl: 'http://picsum.photos/200'}]
     )
   }
 
   return (
-    <div className='app'>
-      <h1>ReStore</h1>
+    <>
+      <Typography variant='h1'>ReStore</Typography>
       <Catalog products={products} addProduct={addProduct}/>
-    </div>
+    </>
   );
 }
 

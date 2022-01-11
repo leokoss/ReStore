@@ -1,19 +1,17 @@
+import { Avatar, Button, List, ListItem, ListItemAvatar, ListItemText } from "@material-ui/core";
 import { Product } from "../../app/models/product";
+import ProductList from "./ProductList";
 
 interface Props {
-    products: Product[];
-    addProduct: () => void;
+  products: Product[];
+  addProduct: () => void;
 }
 
 export default function Catalog({products, addProduct}: Props) {
     return(
         <>
-        <ul>
-        {products.map((product) =>(
-          <li key={product.id}>{product.name} - {product.price} - {product.brand}</li>
-        ))}
-      </ul>
-      <button onClick={addProduct}>AddProduct</button>
+          <ProductList products={products} />
+          <Button variant='contained' onClick={addProduct}>AddProduct</Button>
     
         </>
     )
