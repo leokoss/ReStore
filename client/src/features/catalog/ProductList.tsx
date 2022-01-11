@@ -1,5 +1,6 @@
 import { List, ListItem, ListItemAvatar, Avatar, ListItemText } from "@material-ui/core";
 import { Product } from "../../app/models/product";
+import ProductCard from "./ProductCard";
 
 interface Props {
     products: Product[];
@@ -7,16 +8,13 @@ interface Props {
 
 
 export default function ProductList({products}: Props){
+  return(
+    
     <List>
         {products.map((product) =>(
-          <ListItem key={product.id}>
-            <ListItemAvatar>
-              <Avatar src={product.pictureUrl} />
-            </ListItemAvatar>
-            <ListItemText>
-              {product.name} - {product.price}
-            </ListItemText>
-          </ListItem>
+          <ProductCard product={product} />
         ))}
       </List>
+      
+  )
 }
