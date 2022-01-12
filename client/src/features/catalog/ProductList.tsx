@@ -1,4 +1,4 @@
-import { List, ListItem, ListItemAvatar, Avatar, ListItemText } from "@material-ui/core";
+import { Grid, List } from "@material-ui/core";
 import { Product } from "../../app/models/product";
 import ProductCard from "./ProductCard";
 
@@ -10,11 +10,14 @@ interface Props {
 export default function ProductList({products}: Props){
   return(
     
-    <List>
+    <Grid container spacing={4}>
         {products.map((product) =>(
-          <ProductCard product={product} />
+          <Grid  item xs={3} >
+            <ProductCard key={product.id} product={product} />
+          </Grid>
+          
         ))}
-      </List>
+      </Grid>
       
   )
 }
