@@ -4,27 +4,28 @@ import { Product } from "../../app/models/product";
 interface Props {
   product: Product;
 }
+
 export default function ProductCard({ product }: Props) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
         avatar={
-          <Avatar>
+          <Avatar sx={{bgcolor:'secondary.main'}}>
             {product.name.charAt(0).toUpperCase()}
           </Avatar>
         }
         title={product.name}
+        titleTypographyProps={{fontWeight: 'bold', color: 'primary.main'}}
       />
       <CardMedia
-        sx={{height: 140, backgroundSize: 'contain' }}
+        sx={{height: 140, backgroundSize: 'contain'}}
         component="img"
-        image={product.pictureUrl}
-        alt={product.name}
+        src={product.pictureUrl}
         title={product.name}
       />
       <CardContent>
         <Typography gutterBottom color='secondary' variant="h5">
-          {product.price}
+          ${(product.price / 100).toFixed(2)}
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {product.brand} / {product.type}

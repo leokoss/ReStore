@@ -1,4 +1,4 @@
-import { Grid, List } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { Product } from "../../app/models/product";
 import ProductCard from "./ProductCard";
 
@@ -12,8 +12,8 @@ export default function ProductList({products}: Props){
     
     <Grid container spacing={4}>
         {products.map((product) =>(
-          <Grid  item xs={3} >
-            <ProductCard key={product.id} product={product} />
+          <Grid  item xs={3} key={product.id}>
+            <ProductCard product={product} />
           </Grid>
           
         ))}
