@@ -1,4 +1,4 @@
-import { Avatar, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Typography } from "@material-ui/core";
+import { Avatar, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Typography } from "@mui/material";
 import { Product } from "../../app/models/product";
 
 interface Props {
@@ -18,7 +18,7 @@ export default function ProductCard({ product }: Props) {
         titleTypographyProps={{fontWeight: 'bold', color: 'primary.main'}}
       />
       <CardMedia
-        sx={{height: 140, backgroundSize: 'contain'}}
+        sx={{height: 140, backgroundSize: 100}}
         component="img"
         src={product.pictureUrl}
         title={product.name}
