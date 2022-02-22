@@ -38,12 +38,15 @@ export default function ProductCard({ product }: Props) {
       <CardActions>
         <Button size="small">Add to Basket</Button>
 
-        <Link to={`/catalog/${product.id}`}>
-          <Button size="small">
-            View
 
-          </Button>
-        </Link>
+        <Button size="small">
+          <Link to={`/catalog/${product.id}`} style={{
+            textDecoration: "none"
+          }}>
+            View
+          </Link>
+        </Button>
+
       </CardActions>
     </Card>
   )
