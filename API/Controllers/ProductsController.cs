@@ -7,16 +7,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class ProductsControler : ControllerBase
-    {   
+
+    public class ProductsControler : BaseApiController
+    {
         private readonly StoreContext _context;
-       
+
         public ProductsControler(StoreContext context)
         {
             _context = context;
-        
+
         }
 
         [HttpGet]
